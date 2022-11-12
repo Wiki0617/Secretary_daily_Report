@@ -8,5 +8,3 @@ EdgeOptions.add_experimental_option("excludeSwitches", ["enable-logging"])
 driver = webdriver.ChromiumEdge(service=service)
 driver.get("https://www.jma.go.jp/bosai/weather_map/")
 driver.fullscreen_window()
-driver.save_screenshot()
-
