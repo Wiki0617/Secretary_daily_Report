@@ -15,13 +15,11 @@ driver = webdriver.ChromiumEdge(service=service,options=EdgeOptions)
 
 # 指定URLを開く
 driver.get("https://www.jma.go.jp/bosai/weather_map/")
-
 time.sleep(5)
 
 # 全画面化
 driver.fullscreen_window()
-
-time.sleep(10)
+time.sleep(5)
 
 # save_screenshotでdriver画面のスクショを"./*.png"で保存
 driver.save_screenshot("./saved_screenshots_Folder/weathermap_now.png")
@@ -39,3 +37,8 @@ driver.save_screenshot("./saved_screenshots_Folder/weathermap_now.png")
 
 # Picture.show
 # time.sleep(10)
+
+# 飛行場気象解説情報(定時/臨時)のページでスクリーンショット取得(デフォルトがRJTTだから操作は特に不要か)
+driver.get("https://www.data.jma.go.jp/airinfo/data/awfo_comment.html#contents_area2")
+time.sleep(5)
+driver.save_screenshot("./saved_screenshots_Folder/RJTT_AERODOME_WX_COMMENTARY.png")
