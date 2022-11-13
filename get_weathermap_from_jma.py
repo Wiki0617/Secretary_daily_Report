@@ -13,7 +13,12 @@ EdgeOptions = webdriver.EdgeOptions()
 EdgeOptions.add_experimental_option("excludeSwitches", ["enable-logging"])
 driver = webdriver.ChromiumEdge(service=service,options=EdgeOptions)
 
-# 指定URLを開く
+# beautifulsoup関連の準備
+import requests
+from bs4 import BeautifulSoup
+
+# JMAの天気図ページを開く
+# (robots.txtでの制限範囲外を確認済)
 driver.get("https://www.jma.go.jp/bosai/weather_map/")
 time.sleep(5)
 
@@ -38,7 +43,9 @@ driver.save_screenshot("./saved_screenshots_Folder/weathermap_now.png")
 # Picture.show
 # time.sleep(10)
 
-# 飛行場気象解説情報(定時/臨時)のページでスクリーンショット取得(デフォルトがRJTTだから操作は特に不要か)
+# 飛行場気象解説情報(定時/臨時)のページでスクリーンショット取得
+# (robots.txtでの制限範囲外を確認)
+# (デフォルトがRJTTだから操作は特に不要か)
 driver.get("https://www.data.jma.go.jp/airinfo/data/awfo_comment.html#contents_area2")
 time.sleep(5)
 driver.save_screenshot("./saved_screenshots_Folder/RJTT_AERODOME_WX_COMMENTARY.png")
