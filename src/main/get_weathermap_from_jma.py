@@ -5,7 +5,6 @@ import time
 
 # selenium関連の準備
 from selenium.webdriver.edge.service import Service
-from webdriver_manager.microsoft import EdgeChromiumDriver
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 service = Service(executable_path=EdgeChromiumDriverManager().install())
 from selenium import webdriver
